@@ -1,5 +1,10 @@
 import torch
 import pytest
+import sys
+import os
+
+# Add parent directory to path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from model import Net
 
 class TestModelArchitecture:
