@@ -19,45 +19,25 @@ The model uses a lightweight CNN architecture with the following key features:
 python
 
 Input (1, 28, 28)
-
 │
-
 ├── Block 1
-
 │ ├── Conv2d(1 → 8, 3x3) + BN + ReLU
-
 │ ├── Conv2d(8 → 16, 3x3) + BN + ReLU
-
 │ ├── MaxPool2d(2x2)
-
 │ └── Dropout(0.1)
-
 │
-
 ├── Block 2
-
 │ ├── Conv2d(16 → 16, 3x3) + BN + ReLU
-
 │ ├── Conv2d(16 → 24, 3x3) + BN + ReLU
-
 │ ├── MaxPool2d(2x2)
-
 │ └── Dropout(0.1)
-
 │
-
 ├── Block 3
-
 │ ├── Conv2d(24 → 24, 3x3) + BN + ReLU
-
 │ ├── Conv2d(24 → 16, 1x1) + BN + ReLU
-
 │ ├── Global Average Pooling
-
 │ └── Conv2d(16 → 10, 1x1)
-
 │
-
 └── Output (10)
 
 ## Requirements
@@ -177,6 +157,9 @@ print(f'Total trainable parameters: {total_params}')
 checkpoint = torch.load('checkpoints/final/model_epoch_9.pth')
 model.load_state_dict(checkpoint['model_state_dict'])
 ```
+## Output
+![image](https://github.com/user-attachments/assets/c34cb2b5-67b3-4045-b63e-730219a49a8f)
+
 
 ## Continuous Integration
 
